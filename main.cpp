@@ -1,15 +1,18 @@
+#include "Canvas.h"
 #include <opencv2/opencv.hpp>
 
 int main() {
-    cv::Mat mat(400, 400, CV_32F);
+    Canvas canvas(400, 400);
 
-    cv::circle(mat, cv::Point(200, 200), 150, cv::Scalar(255, 0, 0), -1);
+    for(int i = 0; i < 100; i++) {
+        for(int j = 0; j < 200; j++) {
+            canvas.drawPixel(i, j, 255, 255, 255);
+        }
+    }
 
-    cv::imshow("Window", mat);
+    canvas.show();
 
     cv::waitKey(0);
-
-    cv::destroyAllWindows();
 
     return 0;
 }
