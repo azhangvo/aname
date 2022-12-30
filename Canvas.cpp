@@ -30,7 +30,7 @@ int Canvas::getHeight() const {
 }
 
 void Canvas::drawPixel(int x, int y, cv::Scalar color) {
-    auto &pixel = mat.at<cv::Vec3b>(cv::Point(x, y));
+    auto &pixel = mat.at<cv::Vec3b>(cv::Point(x, y)); // one comment says to use .ptr instead of .at for performance, will revisit
     int b = (int) round(color[0]), g = (int) round(color[1]), r = (int) round(color[2]);
     pixel[0] = b;
     pixel[1] = g;
