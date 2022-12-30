@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.23)
-set(CMAKE_OSX_ARCHITECTURES x86_64)
+set(CMAKE_OSX_ARCHITECTURES x86_64) # Comment this line out if on intel architecture I think
 project(aname)
 
 set(CMAKE_CXX_STANDARD 14)
