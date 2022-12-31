@@ -11,13 +11,22 @@ struct Sphere {
     cv::Scalar color;
 };
 
+struct PointLight {
+    PointLight(cv::Point3d c, double i) : c(c), intensity(i) {};
+
+    cv::Point3d c;
+    double intensity;
+};
+
 int main() {
     const cv::Scalar blue = {255, 0, 0}, green = {0, 255, 0}, red = {0, 0, 255};
 
     Sphere spheres[] = {Sphere(cv::Point3d(0, 0, 10), 2.0, blue), Sphere(cv::Point3d(2, 0, 4), 1, red)};
+    PointLight lights[] = {PointLight(cv::Point3d(3, 3, 1), 0.8)};
     Camera camera;
 
     int w = 2048, h = 2048;
+    double ambient = 0.2;
     Canvas canvas(w, h);
     camera.setResolution(w, h);
 
@@ -47,9 +56,19 @@ int main() {
                     closest = &sphere;
                 }
             }
-            if (closest != nullptr)
-                canvas.drawPixel(i, j, closest->color);
-            else
+            if (closest != nullptr) {
+                cv::Point3d intersection = min_t * viewportPoint;
+                cv::Point3d normal = intersection - closest->c;
+                normal /= norm(normal);
+                double illumination = ambient;
+                for(auto light : lights) {
+                    cv::Point3d vec = light.c - intersection;
+                    double contrib = vec.dot(normal) / norm(vec);
+                    if(contrib > 0)
+                        illumination += contrib;
+                }
+                canvas.drawPixel(i, j, closest->color * illumination);
+            } else
                 canvas.drawPixel(i, j, 255, 255, 255);
         }
     }

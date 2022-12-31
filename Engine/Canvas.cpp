@@ -6,6 +6,10 @@
 
 #include <utility>
 
+double clamp(double n, double lower, double upper) {
+    return std::max(lower, std::min(n, upper));
+}
+
 cv::Mat Canvas::getMat() {
     return mat;
 }
@@ -30,18 +34,19 @@ int Canvas::getHeight() const {
 }
 
 void Canvas::drawPixel(int x, int y, cv::Scalar color) {
-    auto &pixel = mat.at<cv::Vec3b>(cv::Point(x, y)); // one comment says to use .ptr instead of .at for performance, will revisit
-    int b = (int) round(color[0]), g = (int) round(color[1]), r = (int) round(color[2]);
-    pixel[0] = b;
-    pixel[1] = g;
-    pixel[2] = r;
+    auto &pixel = mat.at<cv::Vec3b>(
+            cv::Point(x, y)); // one comment says to use .ptr instead of .at for performance, will revisit
+    double b = round(color[0]), g = round(color[1]), r = round(color[2]);
+    pixel[0] = (int) clamp(b, 0, 255);
+    pixel[1] = (int) clamp(g, 0, 255);
+    pixel[2] = (int) clamp(r, 0, 255);
 }
 
 void Canvas::drawPixel(int x, int y, int r, int g, int b) {
     auto &pixel = mat.at<cv::Vec3b>(cv::Point(x, y));
-    pixel[0] = b;
-    pixel[1] = g;
-    pixel[2] = r;
+    pixel[0] = (int) clamp(b, 0, 255);
+    pixel[1] = (int) clamp(g, 0, 255);
+    pixel[2] = (int) clamp(r, 0, 255);
 }
 
 void Canvas::show() {
