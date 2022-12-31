@@ -9,6 +9,6 @@ find_package(OpenCV)
 include_directories(${OpenCV_INCLUDE_DIRS})
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(aname main.cpp Canvas.cpp Canvas.h)
+add_executable(aname main.cpp Engine/Canvas.cpp Engine/Canvas.h Engine/Camera.cpp Engine/Camera.h)
 
 target_link_libraries(aname ${OpenCV_LIBS})
