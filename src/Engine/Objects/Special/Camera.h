@@ -10,22 +10,14 @@
 class Camera {
 public:
     Camera();
-    void setResolution(int width, int height);
-    cv::Point3d translateToViewport(int x, int y);
+    cv::Point3d translateToViewport(int x, int y, int w, int h);
 
     cv::Point3d getLocation() {
         return location;
     }
-    int getWidth() const {
-        return w;
-    }
-    int getHeight() const {
-        return h;
-    }
 
 private:
     cv::Point3d location, viewport[4];
-    int w{-1}, h{-1};
 };
 
 

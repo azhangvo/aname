@@ -4,11 +4,9 @@
 
 #include "Canvas.h"
 
-#include <utility>
+#include "../Util/Util.h"
 
-double clamp(double n, double lower, double upper) {
-    return std::max(lower, std::min(n, upper));
-}
+#include <utility>
 
 cv::Mat Canvas::getMat() {
     return mat;
