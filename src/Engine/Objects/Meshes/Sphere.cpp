@@ -5,9 +5,11 @@
 #include "Sphere.h"
 
 double Sphere::intersectsRay(cv::Point3d start, cv::Point3d direction, double min_t, double max_t) const {
+    cv::Point3d displacement = start - location;
+
     double a = direction.dot(direction);
-    double b = -2.0 * direction.dot(location);
-    double c = location.dot(location) - radius * radius;
+    double b = 2.0 * direction.dot(displacement);
+    double c = displacement.dot(displacement) - radius * radius;
 
     double discriminant = b * b - 4 * a * c;
 

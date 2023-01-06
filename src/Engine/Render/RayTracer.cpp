@@ -6,8 +6,6 @@
 #include "../../Display/Canvas.h"
 #include "../../Util/Util.h"
 
-const double D_INF = std::numeric_limits<double>::infinity();
-
 std::pair<Mesh *, double>
 ray_intersect(Scene &scene, cv::Point3d origin, cv::Point3d vector, double t_min, double t_max) {
     double closest_t = NAN;
