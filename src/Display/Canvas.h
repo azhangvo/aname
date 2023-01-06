@@ -2,8 +2,8 @@
 // Created by Arthur Zhang on 12/30/22.
 //
 
-#ifndef ANAME_CANVAS_H
-#define ANAME_CANVAS_H
+#ifndef A_NAME_CANVAS_H
+#define A_NAME_CANVAS_H
 
 
 #include <opencv2/opencv.hpp>
@@ -26,4 +26,4 @@ private:
 };
 
 
-#endif //ANAME_CANVAS_H
+#endif //A_NAME_CANVAS_H

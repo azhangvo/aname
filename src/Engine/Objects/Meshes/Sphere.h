@@ -2,8 +2,8 @@
 // Created by Arthur Zhang on 1/2/23.
 //
 
-#ifndef ANAME_SPHERE_H
-#define ANAME_SPHERE_H
+#ifndef A_NAME_SPHERE_H
+#define A_NAME_SPHERE_H
 
 
 #include <utility>
@@ -27,4 +27,4 @@ private:
 };
 
 
-#endif //ANAME_SPHERE_H
+#endif //A_NAME_SPHERE_H

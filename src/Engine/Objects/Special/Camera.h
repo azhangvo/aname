@@ -2,8 +2,8 @@
 // Created by Arthur Zhang on 12/30/22.
 //
 
-#ifndef ANAME_CAMERA_H
-#define ANAME_CAMERA_H
+#ifndef A_NAME_CAMERA_H
+#define A_NAME_CAMERA_H
 
 #include <opencv2/opencv.hpp>
 
@@ -21,4 +21,4 @@ private:
 };
 
 
-#endif //ANAME_CAMERA_H
+#endif //A_NAME_CAMERA_H

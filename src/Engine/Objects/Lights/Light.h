@@ -2,8 +2,8 @@
 // Created by Arthur Zhang on 1/1/23.
 //
 
-#ifndef ANAME_LIGHT_H
-#define ANAME_LIGHT_H
+#ifndef A_NAME_LIGHT_H
+#define A_NAME_LIGHT_H
 
 #include <utility>
 #include "opencv2/opencv.hpp"
@@ -24,4 +24,4 @@ private:
 };
 
 
-#endif //ANAME_LIGHT_H
+#endif //A_NAME_LIGHT_H

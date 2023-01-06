@@ -14,5 +14,5 @@ Camera::Camera() {
 
 cv::Point3d Camera::translateToViewport(int x, int y, int w, int h) {
     cv::Point3d x_vec = viewport[1] - viewport[0], y_vec = viewport[3] - viewport[0];
-    return viewport[0] + x_vec * x / w + y_vec * y / h;
+    return viewport[0] + x_vec * x / (w - 1) + y_vec * y / (h - 1);
 }

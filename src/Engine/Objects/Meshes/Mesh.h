@@ -2,8 +2,8 @@
 // Created by Arthur Zhang on 1/1/23.
 //
 
-#ifndef ANAME_MESH_H
-#define ANAME_MESH_H
+#ifndef A_NAME_MESH_H
+#define A_NAME_MESH_H
 
 
 #include <opencv2/opencv.hpp>
@@ -31,4 +31,4 @@ protected:
 };
 
 
-#endif //ANAME_MESH_H
+#endif //A_NAME_MESH_H

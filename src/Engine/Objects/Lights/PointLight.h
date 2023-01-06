@@ -2,8 +2,8 @@
 // Created by Arthur Zhang on 1/1/23.
 //
 
-#ifndef ANAME_POINTLIGHT_H
-#define ANAME_POINTLIGHT_H
+#ifndef A_NAME_POINTLIGHT_H
+#define A_NAME_POINTLIGHT_H
 
 
 #include <opencv2/opencv.hpp>
@@ -24,4 +24,4 @@ private:
 };
 
 
-#endif //ANAME_POINTLIGHT_H
+#endif //A_NAME_POINTLIGHT_H

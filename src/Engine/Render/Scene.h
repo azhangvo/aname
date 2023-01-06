@@ -2,8 +2,8 @@
 // Created by Arthur Zhang on 1/1/23.
 //
 
-#ifndef ANAME_SCENE_H
-#define ANAME_SCENE_H
+#ifndef A_NAME_SCENE_H
+#define A_NAME_SCENE_H
 
 
 #include "../Objects/Lights/Light.h"
@@ -26,4 +26,4 @@ private:
 };
 
 
-#endif //ANAME_SCENE_H
+#endif //A_NAME_SCENE_H

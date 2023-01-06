@@ -7,8 +7,6 @@
 
 std::pair<cv::Point3d, double> DirectionalLight::calculateLighting(cv::Point3d target) const {
     double t = D_INF;
-//    double t_max = std::sqrt(std::sqrt(DBL_MAX));
-    double t_max = 100;
     if(direction.x != 0)
         t = (t_max - std::abs(target.x)) / direction.x;
     if(direction.y != 0)
